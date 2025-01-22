@@ -6,16 +6,16 @@ type Routes interface {
 	Setup()
 }
 
-type RoutesImpl []Routes
+type Impl []Routes
 
-func (rgw *RoutesImpl) Setup() {
+func (rgw *Impl) Setup() {
 	for _, r := range *rgw {
 		r.Setup()
 	}
 }
 
-func NewRoutes() *RoutesImpl {
-	return &RoutesImpl{}
+func NewRoutes() *Impl {
+	return &Impl{}
 }
 
-var RoutesGateWayModule = fx.Option(fx.Provide(NewRoutes))
+var GateWayModule = fx.Provide(NewRoutes)

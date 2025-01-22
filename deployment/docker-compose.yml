@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+#  todolist:
+#    build:
+#      context: ..
+#      dockerfile: ./deployment/Dockerfile
+#    ports:
+#      - "8080:8080"
+#    container_name: todolist-app
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  db:
+    image: postgres:15
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: sotaicg
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-data:/var/lib/postgresql/data

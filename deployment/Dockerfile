@@ -9,11 +9,11 @@ ENV GOPROXY https://proxy.golang.org
 RUN apk add gcc && \
     apk add make
 
-COPY go.mod go.sum  ./
+COPY ../go.mod go.sum  ./
 
 RUN go mod download && go mod verify && go mod tidy
 
-COPY . ./
+COPY .. ./
 
 RUN go build -o /app/todolist main.go
 

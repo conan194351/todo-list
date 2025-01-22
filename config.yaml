@@ -1,0 +1,21 @@
+server:
+  secret_key: secretkey
+  host_port: ":8080"
+  gin_mode: "debug"
+
+swagger:
+  host: localhost:8080
+  schemes: http
+  username: admin
+  password: admin
+
+redis:
+  host: 125.212.201.24
+  port: 32103
+
+database:
+  host: localhost
+  port: 5432
+  user: admin
+  pass: admin
+  name: sotaicg
